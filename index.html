@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Calculadora abierta de ROI de automatización de Blastup Partner">
+  <title>Calculadora de ROI de automatización | Blastup Partner</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header><p class="eyebrow">Blastup Partner · Demo abierta</p><h1>Calculadora de ROI de automatización</h1>
+      <p>Estima el valor anual de las horas recuperadas. Cambia los supuestos para explorar escenarios; los resultados no son una promesa de ahorro.</p></header>
+    <form id="calculator">
+      <label>Personas afectadas<input name="people" type="number" min="1" step="1" value="5" required></label>
+      <label>Horas manuales por persona y semana<input name="hoursPerWeek" type="number" min="0" step="0.1" value="4" required></label>
+      <label>Coste laboral por hora (€)<input name="hourlyCost" type="number" min="0" step="0.01" value="25" required></label>
+      <label>Horas recuperables (%)<input name="recoveryPercent" type="number" min="0" max="100" step="1" value="50" required></label>
+      <label>Implantación inicial (€)<input name="setupCost" type="number" min="0" step="0.01" value="3000" required></label>
+      <label>Operación mensual (€)<input name="monthlyCost" type="number" min="0" step="0.01" value="200" required></label>
+      <button>Calcular estimación</button>
+    </form>
+    <section id="results" hidden aria-live="polite"><h2>Estimación del primer año</h2>
+      <dl><div><dt>Horas recuperadas</dt><dd id="hours"></dd></div><div><dt>Beneficio bruto</dt><dd id="benefit"></dd></div>
+      <div><dt>Coste total</dt><dd id="cost"></dd></div><div><dt>Resultado neto</dt><dd id="net"></dd></div>
+      <div><dt>ROI sobre coste</dt><dd id="roi"></dd></div><div><dt>Recuperación de la inversión</dt><dd id="payback"></dd></div></dl>
+    </section>
+    <p class="note">Supuestos: 52 semanas al año; la recuperación de horas es una estimación; no se incluyen impuestos ni efectos indirectos. No se envían datos a ningún servidor.</p>
+    <footer><a href="https://blast-up.com">Web oficial de Blastup Partner</a></footer>
+  </main>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
